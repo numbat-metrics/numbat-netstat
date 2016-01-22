@@ -7,5 +7,6 @@
     "nconf": "~0.8.2",
     "numbat-emitter": "~2.2.0",
     "procfs-stats": "0.0.4"
-  }
+  },
+  "license": "ISC"
 }
