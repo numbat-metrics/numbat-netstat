@@ -8,5 +8,8 @@
     "numbat-emitter": "~2.2.0",
     "procfs-stats": "0.0.4"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "bin": {
+    "numbat-netstat": "./bin/numbat-netstat"
+  }
 }
