@@ -22,7 +22,6 @@ var NetstatProducer = module.exports = function (options) {
       })
 
       Object.keys(states).forEach(function (state) {
-        console.log(states[state], state)
         emitter.metric({
           name: 'sockets.' + state,
           value: states[state]
