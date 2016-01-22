@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+var os = require('os')
+var NetstatProducer = require('../')
+var nconf = require('nconf')
+var bole = require('bole')
+var config
+
+bole.output({
+  level: 'info',
+  stream: process.stdout
+})
+
+nconf
+  .argv({
+    uri:      { alias: 'u' },
+    hostname: { alias: 'h' },
+    config:   { alias: 'c' },
+    interval: { alias: 'i' }
+  })
+
+config = nconf.get('config')
+if (config) {
+  nconf.file(nconf.get('config'))
+}
+
+if (nconf.get('help')) {
+  console.log([
+    'usage: numbat-haproxy [options]\n',
+    'options:',
+    '  -c, --config    Config file to use',
+    '  -u, --uri       numbat-collector or numbat-analyzer URI',
+    '  -h, --hostname  Hostname (defaults to ' + os.hostname() + ')',
+    '  -i, --interval  How often to emit metrics',
+    '      --help      You\'re staring at it'
+  ].join('\n') + '\n')
+  process.exit()
+}
+
+var producer = new NetstatProducer({
+  uri: nconf.get('uri'),
+  app: 'sockets',
+  interval: nconf.get('interval')
+})
