@@ -7,6 +7,7 @@ var DEFAULT_INTERVAL = 1000
 
 var NetstatProducer = module.exports = function (options) {
   var emitter = new NumbatEmitter(options)
+  emitter.emit('netstat.monitor.start')
 
   setInterval(produce, options.interval || DEFAULT_INTERVAL)
 
