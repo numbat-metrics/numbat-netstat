@@ -1,3 +1,5 @@
+'use strict'
+
 var bole = require('bole')
 var NumbatEmitter = require('numbat-emitter')
 var procfs = require('procfs-stats')
