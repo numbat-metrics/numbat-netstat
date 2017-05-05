@@ -2,10 +2,10 @@
   "name": "numbat-netstat",
   "version": "0.1.6",
   "dependencies": {
-    "bole": "~2.0.0",
+    "bole": "~3.0.2",
     "linux-tcp-states": "~1.0.0",
     "nconf": "~0.8.2",
-    "numbat-emitter": "~2.3.1",
+    "numbat-emitter": "~4.0.0",
     "procfs-stats": "~1.0.2"
   },
   "license": "ISC",
